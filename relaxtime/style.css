@@ -214,11 +214,13 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .link__icon svg { width: 21px; height: 21px; }
 .link:hover .link__icon { background: var(--tone); color: #fff; }
 .link--wa { --tone: var(--whatsapp); }
+.link--tg { --tone: var(--telegram); }
 .link--ig { --tone: #e1306c; }
 .link--fb { --tone: #0866ff; }
 .link--tt { --tone: #fe2c55; }
 .link__text { flex: 1; min-width: 0; }
-.link__title { display: block; font-size: 16px; font-weight: 700; line-height: 1.25; }
+.link__title { display: flex; align-items: center; gap: 6px; font-size: 16px; font-weight: 700; line-height: 1.25; }
+.verified { width: 17px; height: 17px; flex: none; }
 .link__sub { display: block; font-size: 13.5px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .link__go { flex: none; color: var(--muted); transition: color .3s, transform .35s var(--ease); }
 .link__go svg { width: 18px; height: 18px; }
@@ -309,6 +311,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .label, .links li, .listed { animation: fadeUp .8s var(--ease) both; }
   .label:nth-of-type(1) { animation-delay: 1.3s; }
   .links--contact li { animation-delay: 1.36s; }
+  .links--contact li:nth-child(2) { animation-delay: 1.42s; }
   .label:nth-of-type(2) { animation-delay: 1.44s; }
   .links--follow li:nth-child(1) { animation-delay: 1.5s; }
   .links--follow li:nth-child(2) { animation-delay: 1.56s; }
