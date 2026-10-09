@@ -75,5 +75,12 @@ window.COLART_CLIENTS = [
     category: "Creative Strategist & Entrepreneur",
     logoFit: "cover",
     accent: "purple"
+  },
+  {
+    slug: "kabis",
+    name: "Kabis",
+    category: "Content Creator",
+    logoFit: "cover",
+    accent: "purple"
   }
 ];

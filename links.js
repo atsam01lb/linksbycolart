@@ -166,7 +166,7 @@
     if (!host || !window.matchMedia('(min-width: 900px)').matches) return;
 
     var W = 560, H = 540, cx = 360, cy = 270;
-    var nodes = CLIENTS.slice(0, 7);
+    var nodes = CLIENTS.slice(0, 8);
     var k = nodes.length;
     var span = Math.min(150, 40 + k * 22);             // degrees of arc used
     var start = 180 - span / 2;

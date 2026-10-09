@@ -1,379 +1,156 @@
-/* ============================================
-   DELARA BITAR — CONTACT
-   contact.delarabitar.com
-   Light & colorful, built on the delarabitar.com contact styles
-   ============================================ */
+/* ===========================================
+   COLART LINKS — Delara Bitar
+   links.colartdigitalmarketingagency.com/delarabitar
+   This profile's own stylesheet. Edit freely —
+   it doesn't affect the directory or other profiles.
+=========================================== */
 
-/* ============ TOKENS ============ */
 :root {
-  --yellow:     #FED606;
-  --yellow-lt:  #FFE94D;
-  --red:        #EF3D4D;
-  --red-dk:     #B22222;
-  --pink:       #FF5BB5;
-  --gold:       #D4AF37;
-  --whatsapp:   #25D366;
-  --whatsapp-dk:#128C7E;
+  /* Profile accent — change to the client's brand color */
+  --accent:     #c81478;
+  --accent-ink: #ffffff;
 
-  --ink:   #1a1a1a;
-  --bg:    #fafafa;
-  --muted: #666;
-  --line:  #eee;
+  /* Colart brand */
+  --purple:    #642878;
+  --purple-dk: #4a1d59;
+  --magenta:   #c81478;
+  --ink:       #1a1424;
+  --bg:        #ffffff;
+  --bg-soft:   #faf8fb;
+  --line:      rgba(26, 20, 36, .12);
+  --muted:     rgba(26, 20, 36, .62);
 
-  /* Swap these for the exact fonts used on delarabitar.com if different */
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-script:  'Caveat', 'Brush Script MT', cursive;
-  --font-body:    'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
-
-  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --font: 'Lato', 'Noto Kufi Arabic', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --ease: cubic-bezier(.2, .7, .2, 1);
+  --gutter: clamp(20px, 5vw, 36px);
 }
 
-/* ============ RESET ============ */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { -webkit-text-size-adjust: 100%; overflow-x: hidden; }
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
 body {
-  font-family: var(--font-body);
-  background: var(--bg);
+  font-family: var(--font);
+  line-height: 1.55;
   color: var(--ink);
-  line-height: 1.6;
+  background: var(--bg-soft);
+  -webkit-font-smoothing: antialiased;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow-x: clip;
-  -webkit-font-smoothing: antialiased;
 }
 a { color: inherit; text-decoration: none; }
-img, svg { display: block; max-width: 100%; }
-:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; border-radius: 10px; }
+img { display: block; max-width: 100%; }
+:focus-visible { outline: 3px solid var(--magenta); outline-offset: 3px; border-radius: 6px; }
 
-/* Floating color blobs */
-body::before,
-body::after {
-  content: '';
-  position: fixed;
-  border-radius: 50%;
-  z-index: 0;
-  pointer-events: none;
+/* Header */
+.site-header {
+  position: sticky; top: 0; z-index: 20;
+  background: rgba(255, 255, 255, .88);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
 }
-body::before {
-  top: 5%; right: -5%;
-  width: 400px; height: 400px;
-  background: radial-gradient(circle, rgba(254, 214, 6, 0.18) 0%, transparent 70%);
-  animation: float 8s ease-in-out infinite;
+.site-header .wrap {
+  max-width: 1240px; margin: 0 auto; padding: 0 var(--gutter);
+  height: 64px; display: flex; align-items: center;
 }
-body::after {
-  bottom: 5%; left: -5%;
-  width: 500px; height: 500px;
-  background: radial-gradient(circle, rgba(178, 34, 34, 0.12) 0%, transparent 70%);
-  animation: float 10s ease-in-out infinite reverse;
-}
-main { position: relative; z-index: 1; flex: 1; }
+.brand { display: inline-flex; align-items: center; gap: 10px; }
+.brand img { width: 34px; height: auto; }
+.brand-name { font-size: 18px; line-height: 1; color: var(--purple); }
+.brand-name b { font-weight: 900; }
+.brand-name span { font-weight: 300; color: var(--ink); }
 
-/* ============ HERO ============ */
-.ct-hero {
-  padding: clamp(3.5rem, 9vw, 6.5rem) 1.25rem 2.5rem;
-  text-align: center;
-}
-.ct-hero-content {
-  max-width: 760px;
-  margin: 0 auto;
-  animation: fadeInUp 1s var(--ease) 0.2s both;
-}
-.ct-hero-eyebrow {
-  display: inline-block;
-  font-family: var(--font-script);
-  font-size: 1.75rem;
-  color: var(--red-dk);
-  transform: rotate(-2deg);
-  margin-bottom: 0.4rem;
-}
-.ct-hero-title {
-  font-family: var(--font-display);
-  font-size: clamp(2.4rem, 7vw, 4.5rem);
-  font-weight: 900;
-  line-height: 1.05;
-  letter-spacing: -1.5px;
-  margin-bottom: 1.1rem;
-}
-.ct-hero-title em { color: var(--red-dk); font-style: italic; }
-.ct-hero-title .accent-yellow {
-  background: linear-gradient(120deg, transparent 0%, transparent 60%, var(--yellow) 60%, var(--yellow) 100%);
-  padding: 0 0.4rem;
-}
-.ct-hero-subtitle {
-  font-size: clamp(1rem, 1.6vw, 1.15rem);
-  color: #444;
-  max-width: 540px;
-  margin: 0 auto;
-}
-.site-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin-top: 1.75rem;
-  background: #000;
-  color: var(--yellow);
-  padding: 0.95rem 1.9rem;
-  border-radius: 50px;
-  font-weight: 700;
-  font-size: 0.95rem;
-  letter-spacing: 0.3px;
-  transition: background .3s ease, color .3s ease, transform .3s ease;
-}
-.site-btn:hover { background: var(--red); color: #fff; transform: translateY(-3px); }
-.site-btn svg { width: 18px; height: 18px; }
-
-/* ============ CARDS ============ */
-.ct-cards { padding: 1rem 1.25rem 3rem; }
-.ct-grid {
-  max-width: 1180px;
-  margin: 0 auto;
+/* Profile */
+.profile {
+  flex: 1;
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.25rem;
+  place-items: start center;
+  padding: clamp(48px, 10vw, 100px) var(--gutter);
+  background: radial-gradient(60% 50% at 50% 0%, color-mix(in srgb, var(--accent) 14%, transparent) 0%, transparent 70%);
 }
-@media (min-width: 880px) {
-  .ct-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-}
+.profile-card { width: 100%; max-width: 440px; text-align: center; }
 
-.card {
-  --btn-bg: #f2f2f2;
-  --btn-fg: var(--ink);
-  --btn-hover-bg: var(--ink);
-  --btn-hover-fg: #fff;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 2.5rem 1.5rem 1.75rem;
-  border-radius: 24px;
+.avatar {
+  display: block;
+  width: 116px; height: 116px;
+  margin: 0 auto;
+  border-radius: 50%;
+  padding: 3px;
+  background: conic-gradient(from 200deg, var(--accent), color-mix(in srgb, var(--accent) 35%, #fff), var(--accent));
+}
+.avatar span {
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  border: 4px solid #fff;
   background: #fff;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
-  transition: transform .4s var(--ease), box-shadow .4s var(--ease);
-  animation: fadeInUp .9s var(--ease) both;
+  display: grid; place-items: center;
+  overflow: hidden;
 }
-.card:nth-child(1) { animation-delay: .45s; }
-.card:nth-child(2) { animation-delay: .6s; }
-.card:nth-child(3) { animation-delay: .75s; }
-.card:hover { transform: translateY(-8px); box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12); }
+.avatar img { width: 82%; height: 82%; object-fit: contain; }
 
-/* Top color bar */
-.card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 5px;
-  background: linear-gradient(90deg, var(--red), var(--pink));
-}
-
-/* Card 1 — Delara Bitar (white, red/pink) */
-.card--delara {
-  --btn-hover-bg: linear-gradient(135deg, var(--red), var(--pink));
-}
-
-/* Card 2 — Del'Arts (yellow) */
-.card--arts {
-  background: linear-gradient(135deg, var(--yellow) 0%, var(--yellow-lt) 100%);
-  color: #000;
-  --btn-bg: #000;
-  --btn-fg: var(--yellow);
-  --btn-hover-bg: var(--red);
-  --btn-hover-fg: #fff;
-}
-.card--arts::before { background: #000; }
-
-/* Card 3 — Delar Tattoo (black, gold) */
-.card--tattoo {
-  background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
-  color: #fff;
-  --btn-bg: var(--gold);
-  --btn-fg: #000;
-  --btn-hover-bg: #fff;
-  --btn-hover-fg: #000;
-}
-.card--tattoo::before { background: linear-gradient(90deg, var(--red-dk), var(--gold)); }
-.card--tattoo:hover { box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3); }
-
-/* Identity */
-.card-media {
-  width: 124px; height: 124px;
-  border-radius: 50%;
-  margin-bottom: 1.1rem;
-  flex: none;
-  transition: transform .4s ease;
-}
-.card:hover .card-media { transform: scale(1.05) rotate(-3deg); }
-.card-media img { width: 100%; height: 100%; }
-
-.card--delara .card-media {
-  padding: 4px;
-  background: conic-gradient(from 200deg, var(--yellow), var(--red), var(--pink), var(--yellow));
-}
-.card--delara .card-media img { border-radius: 50%; border: 4px solid #fff; object-fit: cover; }
-
-.card--arts .card-media { border-radius: 26px; overflow: hidden; box-shadow: 0 10px 26px rgba(0, 0, 0, .18); }
-.card--arts .card-media img { object-fit: cover; }
-
-.card--tattoo .card-media { display: grid; place-items: center; background: rgba(255, 255, 255, .04); border: 1px solid rgba(212, 175, 55, .35); }
-.card--tattoo .card-media img { width: 72%; height: 72%; object-fit: contain; }
-
-.card-script {
-  font-family: var(--font-script);
-  font-size: 1.35rem;
-  line-height: 1;
-  color: var(--red-dk);
-  transform: rotate(-2deg);
-}
-.card--arts .card-script { color: #000; }
-.card--tattoo .card-script { color: var(--gold); }
-
-.card-name {
-  font-family: var(--font-display);
-  font-size: 1.75rem;
+.profile h1 {
+  margin-top: 22px;
+  font-size: clamp(28px, 6vw, 36px);
   font-weight: 900;
-  line-height: 1.15;
-  letter-spacing: -.5px;
-  margin-top: .35rem;
+  letter-spacing: -.02em;
+  line-height: 1.1;
 }
-.card-handle { margin-top: .2rem; font-size: .95rem; opacity: .7; }
-
-/* Buttons */
-.card-actions {
-  width: 100%;
-  margin-top: 1.5rem;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: .6rem;
-}
-
-.btn-wa {
-  grid-column: 1 / -1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: .6rem;
-  min-height: 54px;
-  border-radius: 14px;
-  background: var(--whatsapp);
-  color: #fff;
+.name-ar {
+  display: block;
+  margin-top: 6px;
+  font-family: 'Noto Kufi Arabic', var(--font);
   font-weight: 700;
-  font-size: 1rem;
-  transition: background .3s var(--ease), transform .3s var(--ease), box-shadow .3s var(--ease);
+  font-size: 19px;
+  color: var(--purple);
 }
-.btn-wa:hover { background: var(--whatsapp-dk); transform: translateY(-3px); box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4); }
-.btn-wa svg { width: 22px; height: 22px; fill: currentColor; }
+.category { margin-top: 8px; font-size: 16px; color: var(--muted); }
 
-.btn-social {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: .35rem;
-  min-height: 74px;
-  padding: .7rem .25rem;
-  border-radius: 14px;
-  background: var(--btn-bg);
-  color: var(--btn-fg);
-  font-size: .78rem;
+/* Links — add <li><a> items in index.html */
+.links { list-style: none; margin-top: 34px; display: grid; gap: 12px; }
+.links a {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 56px; padding: 14px 20px;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid var(--line);
   font-weight: 700;
-  letter-spacing: .3px;
-  transition: background .3s var(--ease), color .3s var(--ease), transform .3s var(--ease);
+  transition: border-color .3s, transform .3s var(--ease), color .3s;
 }
-.btn-social svg { width: 22px; height: 22px; }
-.btn-social:hover { background: var(--btn-hover-bg); color: var(--btn-hover-fg); transform: translateY(-4px); }
+.links a:hover { border-color: var(--accent); color: var(--purple); transform: translateY(-2px); }
 
-.btn-web {
-  grid-column: 1 / -1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: .5rem;
-  min-height: 52px;
-  border-radius: 14px;
-  border: 1.5px solid currentColor;
-  font-weight: 700;
-  font-size: .9rem;
-  letter-spacing: .5px;
-  opacity: .9;
-  transition: background .3s var(--ease), color .3s var(--ease), border-color .3s var(--ease);
-}
-.btn-web svg { width: 17px; height: 17px; transition: transform .3s var(--ease); }
-.btn-web:hover { opacity: 1; }
-.btn-web:hover svg { transform: translate(2px, -2px); }
-.card--delara .btn-web { color: var(--red-dk); border-color: rgba(178, 34, 34, .35); }
-.card--delara .btn-web:hover { background: var(--red-dk); border-color: var(--red-dk); color: #fff; }
-.card--arts .btn-web:hover { background: #000; color: var(--yellow); border-color: #000; }
-.card--tattoo .btn-web { color: var(--gold); }
-.card--tattoo .btn-web:hover { background: var(--gold); color: #000; border-color: var(--gold); }
-
-/* ============ GET LISTED (Colart) ============ */
-.listed-wrap { padding: 0 1.25rem 3.5rem; }
-.listed {
-  max-width: 640px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1.1rem 1.1rem 1.1rem 1.5rem;
+/* Placeholder (remove when links are added) */
+.soon {
+  margin-top: 34px;
+  padding: 26px 22px;
   border-radius: 20px;
-  border: 1.5px dashed rgba(0, 0, 0, .18);
-  background: rgba(255, 255, 255, .6);
-  transition: border-color .3s, background .3s;
-  animation: fadeInUp .9s var(--ease) .9s both;
+  border: 1.5px dashed color-mix(in srgb, var(--accent) 45%, transparent);
+  background: #fff;
 }
-.listed:hover { border-color: var(--whatsapp); background: #fff; }
-.listed-q { display: block; font-size: .95rem; color: var(--muted); }
-.listed-a { display: block; font-size: 1.05rem; font-weight: 700; color: var(--ink); line-height: 1.35; }
-.listed-icon {
-  flex: none;
-  width: 48px; height: 48px;
-  border-radius: 50%;
-  background: var(--whatsapp);
-  color: #fff;
-  display: grid;
-  place-items: center;
-  transition: transform .3s var(--ease);
-}
-.listed-icon svg { width: 24px; height: 24px; fill: currentColor; }
-.listed:hover .listed-icon { transform: scale(1.08); }
+.soon p { font-size: 17px; font-weight: 700; }
+.soon p + p { margin-top: 4px; font-size: 15px; font-weight: 400; color: var(--muted); }
+.soon-bars { display: grid; gap: 10px; margin-top: 20px; }
+.soon-bars span { height: 46px; border-radius: 14px; background: var(--bg-soft); }
 
-/* ============ FOOTER ============ */
-.footer {
-  position: relative;
-  z-index: 1;
-  background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
-  color: rgba(255, 255, 255, .7);
-  padding: 1.75rem 1.25rem calc(1.75rem + env(safe-area-inset-bottom, 0px));
-  font-size: .85rem;
+.back {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 28px;
+  font-size: 14px; font-weight: 700;
+  color: var(--purple);
 }
-.footer-credits {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: .5rem .9rem;
+.back svg { width: 16px; height: 16px; transition: transform .3s var(--ease); }
+.back:hover { color: var(--magenta); }
+.back:hover svg { transform: translateX(-4px); }
+
+/* Footer */
+.site-footer {
+  background: linear-gradient(135deg, #f5eef7 0%, #faf5fa 50%, #f7eef3 100%);
+  padding: 28px var(--gutter);
   text-align: center;
+  font-size: 14px;
+  color: var(--muted);
 }
-.footer-credit { display: inline-flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: .1rem .4rem; }
-.footer-label { font-size: .72rem; letter-spacing: 2px; text-transform: uppercase; white-space: nowrap; }
-.footer a { color: var(--yellow); font-weight: 700; border-bottom: 1px solid transparent; transition: border-color .3s; }
-.footer a:hover { border-color: var(--yellow); }
-.footer-sep { color: rgba(255, 255, 255, .25); }
-@media (max-width: 480px) { .footer-sep { display: none; } .footer-credits { flex-direction: column; } }
-
-/* ============ ANIMATIONS ============ */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes float {
-  0%, 100% { transform: translate(0, 0); }
-  50%      { transform: translate(-20px, 24px); }
-}
+.site-footer b { display: block; color: var(--purple); font-weight: 900; font-size: 15px; }
+.site-footer a { color: var(--ink); font-weight: 700; border-bottom: 1px solid rgba(100, 40, 120, .3); }
+.site-footer a:hover { color: var(--magenta); border-color: var(--magenta); }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation: none !important; transition: none !important; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
 }
