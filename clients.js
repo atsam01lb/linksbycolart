@@ -82,5 +82,13 @@ window.COLART_CLIENTS = [
     category: "Content Creator",
     logoFit: "cover",
     accent: "purple"
+  },
+  {
+    slug: "fianchetto",
+    name: "Fianchetto Chess Center",
+    category: "Chess Center",
+    logo: "fianchetto/assets/logo.webp",
+    logoFit: "contain",
+    accent: "yellow"
   }
 ];
