@@ -90,5 +90,13 @@ window.COLART_CLIENTS = [
     logo: "fianchetto/assets/logo.webp",
     logoFit: "contain",
     accent: "yellow"
+  },
+  {
+    slug: "leil",
+    name: "Leil Coffee",
+    nameAr: "ليل",
+    category: "Coffee Shop",
+    logoFit: "contain",
+    accent: "magenta"
   }
 ];
