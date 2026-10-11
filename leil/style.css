@@ -179,6 +179,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .link:hover .link__icon { background: var(--tone); color: #fff; transform: rotate(-6deg); }
 .link--wa { --tone: var(--whatsapp); }
 .link--wa .link__icon { background: #e4f8ec; color: #1ea952; }
+.link--ig { --tone: #e1306c; }
+.link--ig .link__icon { background: #fde8ef; color: #e1306c; }
 .link--fb { --tone: #0866ff; }
 .link--fb .link__icon { background: #e7efff; color: #0866ff; }
 .link__text { flex: 1; min-width: 0; }
