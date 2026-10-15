@@ -98,5 +98,12 @@ window.COLART_CLIENTS = [
     category: "Coffee Shop",
     logoFit: "contain",
     accent: "magenta"
+  },
+  {
+    slug: "aliahmad",
+    name: "Ali Ahmad",
+    category: "Singer",
+    logoFit: "cover",
+    accent: "teal"
   }
 ];
