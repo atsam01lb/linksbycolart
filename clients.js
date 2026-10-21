@@ -105,5 +105,13 @@ window.COLART_CLIENTS = [
     category: "Singer",
     logoFit: "cover",
     accent: "teal"
+  },
+  {
+    slug: "alheshmi",
+    name: "Al Heshmi Coffee",
+    nameAr: "الحشمي",
+    category: "Coffee Shop",
+    logoFit: "cover",
+    accent: "yellow"
   }
 ];

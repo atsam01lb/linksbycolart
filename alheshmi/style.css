@@ -1,0 +1,334 @@
+/* ===========================================
+   AL HESHMI COFFEE | الحشمي — Links
+   links.colartdigitalmarketingagency.com/alheshmi/
+   Black studio, gold foil, rising steam
+=========================================== */
+
+:root {
+  --black:    #0a0a0a;
+  --black-2:  #121110;
+  --gold:     #e2be64;
+  --gold-lt:  #f3dc9c;
+  --gold-dk:  #b8933d;
+  --cream:    #f5efe1;
+  --muted:    rgba(245, 239, 225, .55);
+  --card:     rgba(255, 255, 255, .04);
+  --card-hi:  rgba(226, 190, 100, .08);
+  --line:     rgba(226, 190, 100, .16);
+  --line-hi:  rgba(226, 190, 100, .45);
+  --whatsapp: #25d366;
+
+  --font: 'Readex Pro', 'Tajawal', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --ease: cubic-bezier(.16, 1, .3, 1);
+  --spring: cubic-bezier(.34, 1.5, .64, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; overflow-x: hidden; }
+body {
+  font-family: var(--font);
+  color: var(--cream);
+  background: var(--black);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+/* the studio backdrop from the logo artwork */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0 0 auto;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  background: url('assets/studio.webp') center top / cover no-repeat;
+  -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent 100%);
+          mask-image: linear-gradient(180deg, #000 55%, transparent 100%);
+  opacity: .9;
+}
+a { color: inherit; text-decoration: none; }
+img, svg { display: block; max-width: 100%; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 10px; }
+
+/* ============ TOP BAR ============ */
+.topbar {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 16px 20px 0;
+  display: flex;
+  justify-content: flex-end;
+}
+.share {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line-hi);
+  background: rgba(10, 10, 10, .5);
+  color: var(--gold);
+  transition: background .3s, color .3s;
+}
+.share:hover { background: var(--gold); color: var(--black); }
+.share svg { width: 17px; height: 17px; }
+
+/* ============ PAGE ============ */
+.page {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 20px 56px;
+}
+
+/* ============ HERO ============ */
+.hero { text-align: center; padding-top: 18px; }
+
+/* steam */
+.steam { width: 120px; height: 90px; margin: 0 auto -6px; }
+.steam svg { width: 100%; height: 100%; overflow: visible; }
+.steam path { fill: none; stroke: var(--gold); stroke-width: 2.2; stroke-linecap: round; opacity: 0; }
+
+.logo-wrap { position: relative; width: clamp(250px, 76vw, 330px); margin: 0 auto; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.logo-wrap svg { width: 100%; height: auto; overflow: visible; }
+.logo-wrap path { fill: var(--gold); transform-box: fill-box; transform-origin: center; }
+/* gold-foil shine, masked to the exact letter shapes */
+.logo-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(105deg, transparent 35%, rgba(255, 248, 225, .95) 50%, transparent 65%) no-repeat;
+  background-size: 250% 100%;
+  background-position: 150% 0;
+  -webkit-mask: url('assets/logo-gold.svg') center / 100% 100% no-repeat;
+          mask: url('assets/logo-gold.svg') center / 100% 100% no-repeat;
+}
+.since {
+  margin-top: 18px;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: .34em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.since b { color: var(--gold); font-weight: 500; }
+
+/* ============ MENU ============ */
+.menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 30px;
+  padding: 16px 20px 16px 16px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--gold-lt), var(--gold) 50%, var(--gold-dk));
+  color: var(--black);
+  box-shadow: 0 20px 40px -18px rgba(226, 190, 100, .55);
+  transition: transform .35s var(--ease), box-shadow .35s;
+}
+.menu:hover { transform: translateY(-3px); box-shadow: 0 24px 46px -16px rgba(226, 190, 100, .7); }
+.menu__icon {
+  flex: none;
+  width: 54px; height: 54px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: rgba(10, 10, 10, .12);
+}
+.menu__icon svg { width: 28px; height: 28px; }
+.menu__text { flex: 1; min-width: 0; text-align: left; }
+.menu__en { display: block; font-size: 18px; font-weight: 600; line-height: 1.2; }
+.menu__ar { display: block; font-size: 15px; font-weight: 500; opacity: .8; }
+.menu__go svg { width: 22px; height: 22px; transition: transform .35s var(--ease); }
+.menu:hover .menu__go svg { transform: translateX(4px); }
+.menu::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0; left: -60%;
+  width: 40%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .5), transparent);
+  transform: skewX(-18deg);
+  pointer-events: none;
+}
+
+/* ============ SECTIONS ============ */
+.label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 34px 0 12px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.label span[lang="ar"] { font-size: 15px; letter-spacing: 0; text-transform: none; color: var(--cream); font-weight: 500; }
+.label::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, var(--line-hi), transparent); }
+
+.links { list-style: none; display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; }
+.link {
+  --tone: var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 68px;
+  padding: 10px 16px 10px 10px;
+  border-radius: 16px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: transform .35s var(--ease), border-color .3s, background .3s;
+}
+.link:hover { transform: translateY(-2px); border-color: var(--tone); background: var(--card-hi); }
+.link__icon {
+  flex: none;
+  width: 46px; height: 46px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: rgba(226, 190, 100, .1);
+  color: var(--gold);
+  transition: background .3s, color .3s, transform .45s var(--spring);
+}
+.link__icon svg { width: 21px; height: 21px; }
+.link:hover .link__icon { background: var(--tone); color: #fff; transform: rotate(-6deg); }
+.link--wa { --tone: var(--whatsapp); }
+.link--ig { --tone: #e1306c; }
+.link--fb { --tone: #0866ff; }
+.link--tt { --tone: #fe2c55; }
+.link__text { flex: 1; min-width: 0; }
+.link__title { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 10px; }
+.link__en { font-size: 16px; font-weight: 500; }
+.link__ar { font-size: 15px; font-weight: 500; color: var(--gold); }
+.link__sub { display: block; font-size: 13.5px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; direction: ltr; text-align: left; }
+.link__go { flex: none; color: var(--muted); transition: color .3s, transform .35s var(--ease); }
+.link__go svg { width: 18px; height: 18px; }
+.link:hover .link__go { color: var(--gold); transform: translateX(3px); }
+
+/* ============ JOIN (Colart) ============ */
+.listed {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 36px;
+  padding: 16px 16px 16px 20px;
+  border-radius: 16px;
+  border: 1px dashed var(--line-hi);
+  transition: border-color .3s, background .3s;
+}
+.listed:hover { border-color: var(--whatsapp); background: var(--card); }
+.listed__a { display: block; font-size: 16px; font-weight: 500; line-height: 1.35; }
+.listed__icon {
+  flex: none;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--whatsapp);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  transition: transform .3s var(--ease);
+}
+.listed__icon svg { width: 22px; height: 22px; fill: currentColor; }
+.listed:hover .listed__icon { transform: scale(1.08); }
+
+/* ============ FOOTER ============ */
+.footer {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--line);
+  background: #070707;
+  color: var(--muted);
+  padding: 26px 20px calc(26px + env(safe-area-inset-bottom, 0px));
+}
+.footer__credits {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px 12px;
+  font-size: 13px;
+  text-align: center;
+}
+.footer__credit { display: inline-flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: 2px 6px; }
+.footer__label { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; white-space: nowrap; }
+.footer a { color: var(--gold); font-weight: 500; border-bottom: 1px solid transparent; transition: border-color .3s; }
+.footer a:hover { border-color: var(--gold); }
+.footer__sep { color: rgba(245, 239, 225, .25); }
+@media (max-width: 440px) { .footer__sep { display: none; } .footer__credits { flex-direction: column; } }
+
+/* Toast */
+.toast {
+  position: fixed;
+  left: 50%; bottom: 24px;
+  z-index: 10;
+  transform: translate(-50%, 20px);
+  opacity: 0;
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--black);
+  font-size: 14px;
+  font-weight: 600;
+  pointer-events: none;
+  transition: opacity .3s, transform .3s var(--ease);
+}
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+/* ============ ENTRANCE: "fresh pour" ============ */
+@media (prefers-reduced-motion: no-preference) {
+  .js .logo-wrap path { opacity: 0; }
+  /* 1. the alef stands up first, then الحشمي is revealed right to left, the way Arabic is written */
+  .logo-wrap.play .alef { animation: stand .6s .2s var(--spring) both; }
+  .logo-wrap.play .body { animation: writeRtl 1.2s .55s cubic-bezier(.65, 0, .35, 1) both; }
+  /* 2. the dots drop in like coffee beans */
+  .logo-wrap.play .dot  { animation: bean .6s var(--d) var(--spring) both; }
+  /* 3. AL HESHMI rises letter by letter */
+  .logo-wrap.play .lt   { animation: rise .6s var(--d) var(--ease) both; }
+  /* 4. a gold-foil shine passes over the whole mark */
+  .logo-wrap.play::after { animation: foil 1.4s 2.4s ease-in-out both; }
+  /* steam keeps rising, gently */
+  .steam path { animation: steam 3.6s var(--sd) ease-in-out infinite; }
+  .since { animation: fade .8s 2.3s ease both; }
+  .menu  { animation: rise .8s 2.4s var(--ease) both; }
+  .menu::after { animation: sheen 1.3s 3.2s ease both; }
+  .label, .links li, .listed { animation: rise .7s var(--ease) both; }
+  .label:nth-of-type(1) { animation-delay: 2.55s; }
+  .links--contact li { animation-delay: 2.6s; }
+  .label:nth-of-type(2) { animation-delay: 2.66s; }
+  .links--follow li:nth-child(1) { animation-delay: 2.72s; }
+  .links--follow li:nth-child(2) { animation-delay: 2.78s; }
+  .links--follow li:nth-child(3) { animation-delay: 2.84s; }
+  .listed { animation-delay: 2.92s; }
+}
+@keyframes stand    { from { opacity: 0; transform: scaleY(0); transform-origin: bottom; } to { opacity: 1; transform: none; } }
+@keyframes writeRtl { from { opacity: 1; clip-path: inset(0 0 0 100%); } to { opacity: 1; clip-path: inset(0 0 0 0); } }
+@keyframes bean     { 0% { opacity: 0; transform: translateY(-320%) scale(.6); } 70% { opacity: 1; transform: translateY(12%) scale(1.15, .85); } 100% { opacity: 1; transform: none; } }
+@keyframes rise     { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+@keyframes fade     { from { opacity: 0; } to { opacity: 1; } }
+@keyframes foil     { from { background-position: 150% 0; } to { background-position: -60% 0; } }
+@keyframes sheen    { from { left: -60%; } to { left: 130%; } }
+@keyframes steam {
+  0%   { opacity: 0; transform: translateY(18px) scaleY(.8); }
+  35%  { opacity: .55; }
+  100% { opacity: 0; transform: translateY(-26px) scaleY(1.15); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .js .logo-wrap path { opacity: 1 !important; }
+  .steam path { opacity: .35; }
+}
